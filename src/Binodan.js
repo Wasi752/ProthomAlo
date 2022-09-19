@@ -1,19 +1,21 @@
-import { binodon, binodon2 } from "./data";
+import { japon } from "./data";
+import { Link } from "react-router-dom";
 
 const p_time = "mt-1 text-gray-600 p-2";
 
-function Ananda ({image, heading, ptime}){
+function Ananda ({image, heading, ptime, id}){
     const d_size = "w-full h-[35%] flex mt-2 p-2";
     const h_size = "text-2xl font-bold mt-2";
     return (
-        <div className="w-full h-full">
+       <Link to = {"/" + id}>
+         <div className="w-full h-full">
             <div className={d_size}>
                     <div className="w-[60%]"><p className={h_size}>{heading}</p></div>
                     <div className="w-[40%]"><img src = {image} className="w-full h-full"/></div>
             </div>
                     <p className={p_time}>{ptime}</p>
 
-        </div>
+        </div></Link>
     );
 }
 
@@ -34,8 +36,13 @@ function Anoda2 ({image, heading, news, ptime}){
 
 
 function Binodan (){
-    const anonda = binodon.map(x => <Ananda image={x.image} heading={x.heading} ptime={x.ptime}/>);
-    const anondo = binodon2.map(y => <Ananda image={y.image} heading = {y.heading} ptime = {y.ptime}/>);
+    const anonda = japon
+    .filter(f => f.topic === "binodon") 
+    .map(x => <Ananda id={x.id} image={x.image} heading={x.heading} ptime={x.ptime}/>);
+    
+    const anondo = japon
+    .filter(h => h.topic === "binodon2")
+    .map(y => <Ananda id = {y.id} image={y.image} heading = {y.heading} ptime = {y.ptime}/>);
     return (
         
         <div className="w-full h-full mt-20 ">

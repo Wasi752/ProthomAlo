@@ -6,7 +6,7 @@ function SectionFullPage (){
           
             
           
-            <div className="w-[65%] h-[65%] p-5 divide-y-2">
+            <div className="w-[50%] h-[65%] p-10 mt-10 divide-y-2">
                 <div className="w-full h-full p-2">
                     <div className="flex"><img src="/prothom-alo-images/download.jpeg" className="w-[4%] h-[4%] mt-3"/>
                     <span className= "p-1 m-2 text-3xl font-bold text-red-700 hover:text-blue-800 ">রাজনীতি</span></div>

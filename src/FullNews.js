@@ -4,9 +4,7 @@ import RightSideFullPage from "./RightSideFullpage";
 
 function FullNews (){
     const {id} = useParams();
-    
-    const s_news = japon[id];
-    const {heading, image, news, fnews, ptime, ftime} = japon[id];
+    const {heading, image, news, fnews, ptime, ftime} = japon.find(x =>x.id === parseInt(id));
     return (
         <div className="w-full h-full flex ">
                 
