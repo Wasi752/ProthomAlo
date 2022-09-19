@@ -1,18 +1,18 @@
 import SectionRight from "./SectionRight";
-import SectionFullPage from "./Sectionfullpage";
+import FullPage from "./Fullpage";
 import { useParams } from "react-router-dom";
 
 
 
-function SectionRazniti (){
+function Razniti (){
     
     
     
     return (
         <div className="w-full h-full justify-center">
-            <SectionFullPage/>
+            <FullPage/>
             
         </div>
     );
 }
-export default SectionRazniti;
+export default Razniti;

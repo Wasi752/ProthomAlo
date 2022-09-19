@@ -1,12 +1,17 @@
 import SectionRight from "./SectionRight";
-function SectionFullPage (){
+import {sectionRnews, sectionRmenu} from "./data";
+import {sMenu} from "./SectionRight";
+
+const rightSide = sectionRnews.map(r => <SectionRight num = {r.num} heading = {r.heading}/> );
+
+function FullPage (){
     return (
     <div className="w-full h-full mb-10 ">
-        <div className='w-full h-full flex flex-row divide-x-2 p-3'>
+        <div className='w-full h-full flex flex-row divide-x-2 p-10 ml-10'>
           
             
           
-            <div className="w-[65%] h-[65%] p-5 divide-y-2">
+            <div className="w-[50%] h-[65%] p-5 divide-y-2">
                 <div className="w-full h-full p-2">
                     <div className="flex"><img src="/prothom-alo-images/download.jpeg" className="w-[4%] h-[4%] mt-3"/>
                     <span className= "p-1 m-2 text-3xl font-bold text-red-700 hover:text-blue-800 ">রাজনীতি</span></div>
@@ -64,11 +69,13 @@ function SectionFullPage (){
             
             
             </div>
-          
-            <SectionRight/>
+            <div className="w-[25%] h-[90%] p-5 mt-3 mr-5 divide-y-2 ">
+                {sMenu}
+                {rightSide}
+            </div>
         </div>     
 
     </div> 
     );
 }
-export default SectionFullPage;
+export default FullPage;
