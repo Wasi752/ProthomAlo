@@ -6,7 +6,7 @@ import Advertise from './Advertise';
 import { Routes, Route, Link } from "react-router-dom";
 import FullNews from './FullNews';
 import Home from './Home';
-import SectionRazniti from './SectionRazniti';
+import FullPage from './Fullpage';
 import Form from './Form';
 
 
@@ -26,7 +26,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/:id" element={<FullNews/>} />
-        <Route path="/menu" element={<SectionRazniti/>} /> 
+        <Route path="/menu" element={<FullPage/>} /> 
         <Route path='/form' element ={<Form/>}/>
       </Routes>
      

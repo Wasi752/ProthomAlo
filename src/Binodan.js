@@ -32,9 +32,6 @@ function Anoda2 ({image, heading, news, ptime}){
     );
 }
 
-
-
-
 function Binodan (){
     const anonda = japon
     .filter(f => f.topic === "binodon") 
