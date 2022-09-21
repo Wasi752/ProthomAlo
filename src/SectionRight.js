@@ -1,4 +1,5 @@
-import {sectionRmenu} from "./data"; 
+import { japon } from "./data";
+import { sectionRmenu } from "./data";
 
 function SectionMenu ({menu}){
     return (
@@ -7,7 +8,7 @@ function SectionMenu ({menu}){
 }
 export const sMenu = sectionRmenu.map (e => <SectionMenu menu = {e}/>);
 
-function SectionRight ({num, heading}){
+function SectionRight ({num, heading, id}){
     return (
         <div className="w-full m-3">
             <p className="text-5xl font-bold text-gray-500 mt-4">{num}</p>

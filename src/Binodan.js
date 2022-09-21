@@ -21,16 +21,21 @@ function Ananda ({image, heading, ptime, id}){
 
 const h_class = "text-3xl text-blue-700 font-bold mt-3";
 
-function Anoda2 ({image, heading, news, ptime}){
+function Anoda2 ({image, heading, news, ptime, id}){
     return (
+        <Link to = {"/" + id}>
             <div className="w-full h-full">
                 <img src = {image} className="w-full h-[70%]"/>
                 <p className={h_class}>{heading}</p>
                 <p className="text-lg mt-3">{news}</p>
                 <p className={p_time}>{ptime}</p>
-            </div>
+            </div></Link>
     );
 }
+
+const binodanMain = japon
+.filter(x => x.topic === "binodan")
+.map(z => <Anoda2 id = {z.id} image= {z.image} heading = {z.heading} news = {z.news} ptime = {z.ptime}/>);
 
 function Binodan (){
     const anonda = japon
@@ -54,10 +59,7 @@ function Binodan (){
                     </div>
                 
                     <div className="w-[34%] h-[90%] p-5 ">
-                        <Anoda2 image = "/prothom-alo-images/HOWRAH.webp" 
-                                heading="বৃষ্টিতে ভিজতে ভিজতে ভাবনা..." 
-                                news= "বৃষ্টিতে না ভিজলে যেন অভিনেত্রী আশনা হাবীব ভাবনার ঘুম হয় না। আজও সকালে ছাদবাগানে গুঁড়ি গুঁড়ি বৃষ্টিতে ভিজেছেন তিনি।" 
-                                ptime= "৫ ঘণ্টা আগে"/>
+                        {binodanMain}
                     </div>
                 
                     <div className="w-[33%] h-[90%] pl-5">

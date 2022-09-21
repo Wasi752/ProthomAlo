@@ -1,8 +1,10 @@
 import SectionRight from "./SectionRight";
-import { sectionRnews, sectionRmenu } from "./data";
+import {japon } from "./data";
 import { sMenu } from "./SectionRight";
 
-const rightSide = sectionRnews.map(r => <SectionRight num={r.num} heading={r.heading} />);
+const rightSide = japon
+.filter(h => h.topic === "sectionRnews")
+.map(r => <SectionRight id = {r.id} num={r.num} heading={r.heading} />);
 
 function SectionMainNews() {
     return (

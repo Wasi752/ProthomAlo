@@ -1,62 +1,84 @@
+import { Link } from "react-router-dom";
+import { japon } from "./data";
 
-function News3rdFage (){
+function N3F2R ({image, heading, ptime, id}){
+    return(
+        <Link to = {"/" + id}>
+        <div className="w-full h-[90%] pl-5 ">
+            <img src = {image} className="w-full h-[70%]"/>
+            <p className="text-2xl font-bold mt-3">{heading}</p>
+            <p className="mt-5 text-gray-600">{ptime}</p>
+        </div></Link>
+    );
+}
+    const sharadesh2nd = japon
+    .filter(x => x.topic === "sharadesh2")
+    .map(s => <N3F2R id = {s.id} image = {s.image} heading = {s.heading} ptime = {s.ptime}/>);
+
+function News3rdFage2ndRow() {
     return (
-    
-    <div className="w-[65%] h-[80%]">
-        <div className='w-full h-full flex flex-row divide-x-2 p-3'>
-
-            <div className="w-[65%] h-[65%] p-5 divide-y-2">
-                <div className="w-full h-full p-2">
-                    <div className="flex"><img src="/prothom-alo-images/download.jpeg" className="w-[4%] h-[4%] mt-3"/>
-                    <span className= "p-1 m-2 text-2xl font-bold hover:text-blue-800 ">সারা দেশ</span></div>
-                    <div><img src = "/prothom-alo-images/dh_1.webp" className="w-full h-[70%]"/>
-                    <p className="text-3xl font-bold mt-3 hover:text-blue-800">ঢাকা ও আশপাশ/ গ্যাস–সংকটে জ্বলছে না চুলা, ধুঁকছে শিল্প</p>
-                    <p className="text-xl mt-4">আমদানি করা গ্যাস সরবরাহ কমেছে। দেশেও বাড়ছে না গ্যাসের উৎপাদন। বিশ্ববাজারে দাম বাড়ছেই।</p>
-                    <p className="mt-5 text-gray-600">২ ঘণ্টা আগে</p>
-                    </div>
-
-                </div>
-                
-                
-            </div>
-          
-            <div className="w-[35%] h-[90%] p-2 pt-8 mt-12 divide-y-2">
-                <div className="w-full h-[50%] p-1 ">
-                    <img src = "/prothom-alo-images/moulvibazar__2_.webp" className="w-full h-[70%]"/>
-                    <p className="text-2xl font-bold mt-3">গাছের পাতায় এক বর্ণিল মথ</p>
-                    <p className="mt-5 text-gray-600">২ ঘণ্টা আগে</p>
-                </div>
-                <div className="w-full h-[50%] p-1 ">
-                    <img src = "/prothom-alo-images/4.webp" className="w-full h-[70%]"/>
-                    <p className="text-2xl font-bold mt-3">সারসংকটের মধ্যেও অবৈধ মজুত</p>
-                    <p className="mt-5 text-gray-600">২ ঘণ্টা আগে</p>
-                </div>
-            </div>
-
-        </div>
         <div className='w-full h-[40%] flex flex-row p-3 divide-x-2'>
-          
-                <div className="w-full h-[90%] pl-5 ">
-                    <img src = "/prothom-alo-images/1000.webp" className="w-full h-[70%]"/>
-                    <p className="text-2xl font-bold mt-3">নির্বাচন কমিশন/ ইভিএম কিনতে প্রস্তাব উঠছে</p>
-                    <p className="mt-5 text-gray-600">২ ঘণ্টা আগে</p>
+                {sharadesh2nd}
+        </div>
+    );
+}
+
+function N3F1R ({image, heading, ptime, id}){
+    return(
+    <Link to = {"/" + id}>
+        <div className="w-full h-[50%] p-1 ">
+            <img src={image} className="w-full h-[70%]" />
+            <p className="text-2xl font-bold mt-3">{heading}</p>
+            <p className="mt-5 text-gray-600">{ptime}</p>
+        </div></Link>  
+    );
+}
+    const sharadesh1st = japon
+    .filter(d => d.topic === "sharadesh1")
+    .map(b => <N3F1R id = {b.id} image = {b.image} heading = {b.heading} ptime = {b.ptime}/>);
+
+function News3rdFage1stR (){
+    return(
+        <div className="w-[35%] h-[90%] p-2 pt-8 mt-12 divide-y-2">
+            {sharadesh1st}
+        </div>
+    );
+}
+function News3rdFage1stNews ({id, image, heading, news, ptime}){
+    return(
+        <Link to = {"/" + id}>
+            <div><img src={image} />
+            <p className="text-3xl font-bold mt-3 hover:text-blue-800">{heading}</p>
+            <p className="text-xl mt-4">{news}</p>
+            <p className="mt-5 text-gray-600">{ptime}</p>
+        </div></Link>
+    );
+}
+    const News1st = japon
+    .filter(f => f.topic === "sharadesh")
+    .map(u => <News3rdFage1stNews id = {u.id} image = {u.image} heading = {u.heading} news = {u.news} ptime = {u.ptime}/>);
+
+function News3rdFage() {
+    return (
+
+        <div className="w-[65%] h-[80%]">
+            <div className='w-full h-full flex flex-row divide-x-2 p-3'>
+
+                <div className="w-[65%] h-[65%] p-5 divide-y-2">
+                    <div className="w-full h-full p-2">
+                        <div className="flex"><img src="/prothom-alo-images/download.jpeg" className="w-[4%] h-[4%] mt-3" />
+                            <span className="p-1 m-2 text-2xl font-bold hover:text-blue-800 ">সারা দেশ</span>
+                        </div>
+                        {News1st}
+                    </div>
                 </div>
-                <div className="w-full h-[90%] p-1 ">
-                    <img src = "/prothom-alo-images/train.webp" className="w-full h-[70%]"/>
-                    <p className="text-2xl font-bold mt-3">লাইনচ্যুতির ৮ ঘণ্টা পর রাজশাহীর রুটে রেল যোগাযোগ শুরু</p>
-                    <p className="mt-5 text-gray-600">২ ঘণ্টা আগে</p>
-                </div>
-          
-                <div className="w-full h-[90%] p-1 ">
-                    <img src = "/prothom-alo-images/Muhammad.webp" className="w-full h-[70%]"/>
-                    <p className="text-2xl font-bold mt-3">টেকসই উন্নয়নে চাই পরিবেশবান্ধব সেবা</p>
-                    <p className="mt-5 text-gray-600">২ ঘণ্টা আগে</p>
-                </div>
-                   
+
+                <News3rdFage1stR/>
+
+            </div>
+            <News3rdFage2ndRow/>
 
         </div>
-        
-    </div> 
     );
 }
 

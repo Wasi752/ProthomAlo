@@ -4,7 +4,7 @@ import RightSideFullPage from "./RightSideFullpage";
 
 function FullNews (){
     const {id} = useParams();
-    const {heading, image, news, fnews, ptime, ftime} = japon.find(x =>x.id === parseInt(id));
+    const {heading, image, news, fnews, ptime, ftime, caption} = japon.find(x => x.id === parseInt(id));
     return (
         <div className="w-full h-full flex ">
                 
@@ -17,8 +17,9 @@ function FullNews (){
                         <p className="mt-5 text-xl font-bold"> প্রথম আলো ডেস্ক</p>
                         <p className="text-lg mt-5 text-gray-800">{ftime}</p>
                         <div className="mt-10 ml-40 w-full h-[50%]"><img src={image} className="w-[70%] h-full  "/>
-                        <p>উজবেকিস্তানের সমরখন্দে চলমান এসসিও আঞ্চলিক সম্মেলনের ফাঁকে মোদি ও পুতিন বৈঠক করেন| ছবি: রয়টার্স</p></div>
-                        <div className="w-full h-full mt-10 ml-40"><p className=" w-[70%] h-full text-xl">{fnews}</p></div>
+                        <p className=" text-lg">{caption}</p></div>
+                        <div className="w-full h-full mt-10 ml-40"><p className=" w-[70%] h-full text-xl">{news}</p></div>
+                        <div className="w-full h-full mt-5 ml-40"><p className=" w-[70%] h-full text-xl">{fnews}</p></div>
 
 
             </div>
