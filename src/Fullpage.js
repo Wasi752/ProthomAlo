@@ -72,11 +72,11 @@ function FullPage() {
                     <SectionMainNews />
                     <SectionDownMain />
                 </div>
-                <div className='w-[25%] h-full divide-y-2 mt-20'>
+                <div className='w-[25%] h-full divide-y-2 mt-20 p-2'>
                     <SectionAdv />
                     <Section2ndCol/>
                 </div>
-                <div className="w-[25%] h-[90%] p-2 mt-20 mr-5 divide-y-2 ">
+                <div className="w-[25%] h-[90%] pl-2 pt-2 pr-10 mt-20 mr-12 divide-y-2 ">
                     {sMenu}
                     {rightSide}
                 </div>

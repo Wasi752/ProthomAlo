@@ -18,7 +18,9 @@ function Jibon ({image, heading, news, fnews, ptime, ftime, id}){
 }
 
 function JibonJapon (){
-    const jibon_japon = japon.map((t, i) => <Jibon id={i} image ={t.image} heading ={t.heading} news = {t.news} fnews = {t.fnews} ptime = {t.ptime} ftime = {t.ftime}/>);
+    const jibon_japon = japon
+    .filter(r => r.topic === "japon")
+    .map(t => <Jibon id={t.id} image ={t.image} heading ={t.heading} news = {t.news} fnews = {t.fnews} ptime = {t.ptime} ftime = {t.ftime}/>);
     return (
         
         <div className="w-full h-full mt-1 ">

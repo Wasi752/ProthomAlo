@@ -6,7 +6,9 @@ import Advertise from './Advertise';
 import { Routes, Route, Link } from "react-router-dom";
 import FullNews from './FullNews';
 import Home from './Home';
-import Razniti from './Razniti';
+import FullPage from './Fullpage';
+import Form from './Form';
+
 
 
 
@@ -21,19 +23,13 @@ function App() {
       <Advertise clip = "/prothom-alo-images/cityGrup.jpeg"/>
       <hr></hr>
       
-      
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/:id" element={<FullNews/>} />
-        <Route path="/menu" element={<Razniti/>} />
-        
-     
-        
+        <Route path="/menu" element={<FullPage/>} /> 
+        <Route path='/form' element ={<Form/>}/>
       </Routes>
      
-      
-     
-      
     </div>
   );
 }

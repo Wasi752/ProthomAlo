@@ -1,5 +1,5 @@
 
-import {rightsidefullpage} from "./data";
+import { japon } from "./data";
 
 function FullPageRightSide ({heading, news, image, ptime, id}){
     return (
@@ -23,7 +23,9 @@ function FullPageRightSide ({heading, news, image, ptime, id}){
 }
 
 function RightSideFullPage (){
-    const rightSFpage = rightsidefullpage.map((z, i) => <FullPageRightSide id={i} heading ={z.heading} news = {z.news} image ={z.image} ptime = {z.ptime}/>);
+    const rightSFpage = japon
+    .filter(f => f.topic === "rightsidefullpage")
+    .map(z => <FullPageRightSide id={z.id} heading ={z.heading} news = {z.news} image ={z.image} ptime = {z.ptime}/>);
     
     return (
         <div className="w-full h-full p-3">
