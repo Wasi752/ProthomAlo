@@ -1,6 +1,7 @@
 import {japon} from "./data";
 import { useParams } from "react-router-dom";
 import RightSideFullPage from "./RightSideFullpage";
+import News1stFage from "./News1stFage";
 
 function FullNews (){
     const {id} = useParams();

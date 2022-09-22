@@ -5,15 +5,14 @@ function Jibon ({image, heading, news, fnews, ptime, ftime, id}){
     
     return (
         <Link to = {"/" + id} className="w-[25%] h-full p-5">
-            
-                        
+
                 <img src = {image} className="w-full h-full"/>
                 <p className="text-2xl font-bold mt-2">{heading}</p>                       
                 <p className="text-lg mt-3">{news}</p>
                 <p className="mt-1 text-gray-600">{ptime}</p>
 
                        
-            </Link>
+        </Link>
     );
 }
 
