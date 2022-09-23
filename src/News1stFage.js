@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 import { japon } from "./data";
 
-const cr = "w-[33%] h-[90%] p-5";
-const ccr = "w-[32%] h-[90%] p-5";
+const cr = "w-[33%] h-[90%] p-2";
+const ccr = "w-[32%] h-[90%] p-2";
+const ccrd = "w-[32%] h-[90%] p-2 flex";
 const cd = "text-3xl hover:text-blue-600 font-bold";
 const ccd = "text-lg text-gray-600 hover:text-black";
-const cdr = "mt-20 font-bold text-gray-600";
+const cdr = "mt-10 font-bold text-gray-600";
 
 function MainNews({image, caption, id}){
     return(
@@ -61,7 +62,7 @@ function News2ndRow ({id, heading, news, ptime}){
 
 function News3rdRow ({id, heading, image, ptime}){
     return(
-        <Link to = {"/" + id} className={ccr}>
+        <Link to = {"/" + id} className={ccrd}>
             <div className="w-[60%] p-2"><p className="text-2xl font-bold">{heading}</p>
             <p className={cdr}>{ptime}</p></div>
             <div className="w-[40%] p-2"><img src = {image} className="w-full h-[40%]"/></div>
@@ -74,7 +75,7 @@ function News3rdRow ({id, heading, image, ptime}){
 
 function News4thRow ({id, heading, image, ptime}){
     return(
-        <Link to = {"/" + id} className={ccr}>
+        <Link to = {"/" + id} className={ccrd}>
                 <div className="w-[60%] p-2"><p className="text-2xl font-bold">{heading}</p>
                 <p className={cdr}>{ptime}</p></div>
                 <div className="w-[40%] p-2"><img src = {image} className="w-full h-[70%]"/></div>
